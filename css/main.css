@@ -71,6 +71,7 @@ img,
 svg,
 video {
     vertical-align: middle;
+    border-radius: 50%;
 }
 
 
@@ -1267,6 +1268,7 @@ strong,
 .pane-when .logo img{
 	height: 240px;
 	width: auto;
+  border-radius: 50%;
 }
 /* Clock */
 .pane-when .clock{
