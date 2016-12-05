@@ -83,7 +83,7 @@ else if (isset($_GET['submit_message'])) {
         // Set the recipient email address.
         // IMPORTANT - FIXME: Update this to your desired email address (relative to your server domaine).
 
-        $recipient = "hung.d.cao89@gmail.com.com";
+        $recipient = "hung.d.cao89@gmail.com";
 
         // Set the email subject.
         $subject = "Message From ".$name;
