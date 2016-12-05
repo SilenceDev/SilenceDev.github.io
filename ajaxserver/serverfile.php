@@ -5,9 +5,9 @@ $response = array();
  */
 // check email into post data
 if (isset($_GET['submit_email'])) {
-//    $email = $_GET['email'];  
+//    $email = $_GET['email'];
     $email = filter_var(@$_GET['email'], FILTER_SANITIZE_EMAIL );
-    
+
 //    Form validation handles by the server here if required
 	/*
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -18,26 +18,26 @@ if (isset($_GET['submit_email'])) {
     if (!isset($response['error']) || $response['error'] === '') {
 
 //        PROCESS TO STORE EMAIL GOES HERE
-        
-        
+
+
 		/* in this sample code, emails will be stored in a text file */
 		$email = str_replace(array('<','>'),array('&lt;','&gt;'),$email);
-        
+
 
         // -- BELOW : EXAMPLE TO STORE REGISTERED USERS EMAIL IN A FILE "email.txt" (comment to disable it/ uncomment it to enable it)
-        
+
         file_put_contents("email.txt", $email . " \r\n", FILE_APPEND | LOCK_EX);
-        
+
         // -- END OF EXAMPLE TO STORE REGISTERED USERS EMAIL IN A FILE
-        
+
 
 //        End  PROCESS TO STORE EMAIL GOES HERE
 
         $response['success'] = 'You will be notified';
     }
     $response['email'] = $email;
-    echo json_encode($response);    
-} 
+    echo json_encode($response);
+}
 
 /*
  *Handle Message From
@@ -47,10 +47,10 @@ else if (isset($_GET['submit_message'])) {
     $email = trim($_GET['email']);
     $name = trim($_GET['name']);
     $message = trim($_GET['message']);
-    
-    
+
+
 	$email = filter_var(@$_GET['email'], FILTER_SANITIZE_EMAIL );
-	
+
 	$name = htmlentities($name);
 	$message = htmlentities($message);
 
@@ -69,27 +69,27 @@ else if (isset($_GET['submit_message'])) {
 //    End form validation
 
 
-    if (!isset($response['error']) || $response['error'] === '') {       
+    if (!isset($response['error']) || $response['error'] === '') {
 
-     
+
 //        PROCESS TO STORE MESSAGE GOES HERE
-        
+
         $content = "Name: " . $name . " \r\nEmail: " . $email . " \r\nMessage: " . $message;
         $content = str_replace(array('<','>'),array('&lt;','&gt;'),$content);
         $name = str_replace(array('<','>'),array('&lt;','&gt;'),$name);
         $message = str_replace(array('<','>'),array('&lt;','&gt;'),$message);
-        
+
         // -- BELOW : EXAMPLE SEND YOU AN EMAIL CONTAINING THE MESSAGE (comment to disable it/ uncomment it to enable it)
         // Set the recipient email address.
         // IMPORTANT - FIXME: Update this to your desired email address (relative to your server domaine).
-        /*
-        $recipient = "your@email.com";
+
+        $recipient = "hung.d.cao89@gmail.com.com";
 
         // Set the email subject.
         $subject = "Message From ".$name;
 
         // Build the email content.
-        $email_content = $message."\n \n";        
+        $email_content = $message."\n \n";
         $email_content .= "Sincerely,";
         $email_content .= "From: $name\n\n";
         $email_content .= "Email: $email\n\n";
@@ -109,16 +109,16 @@ else if (isset($_GET['submit_message'])) {
             $response['error'] = 'Something went wrong';
             //echo "Oops! Something went wrong and we couldn't send your message.";
         }
-        */
-        // -- END OF : EXAMPLE YOU AN EMAIL CONTAINING THE MESSAGE 
-        
+
+        // -- END OF : EXAMPLE YOU AN EMAIL CONTAINING THE MESSAGE
+
         // -- BELOW : EXAMPLE TO STORE MESSAGE USERS EMAIL IN A FILE "message.txt" (comment to disable it/ uncomment to enable it)
-        
+
         file_put_contents("message.txt", $content . "\r\n---------\r\n", FILE_APPEND | LOCK_EX);
-        
+
         // -- END OF : EXAMPLE TO STORE MESSAGE USERS EMAIL IN A FILE
-        
-        
+
+
 //        End  PROCESS TO STORE MESSAGE GOES HERE
 
         $response['success'] = 'Message sent successfully';
