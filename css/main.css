@@ -1315,9 +1315,11 @@ strong,
 }
 
 @media screen and (min-width: 480px) {
-    .elem-center {
-        display:none;
-	
+    .elem-center{
+    visibility: hidden;
+    display: none;
+ 
+}	
     }
 }
 .pane-when .clock .elem-center{
