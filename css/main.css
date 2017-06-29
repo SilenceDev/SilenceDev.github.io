@@ -1313,6 +1313,16 @@ strong,
 .pane-when .clock .block:last-child .digit:after{
     display: none;
 }
+
+@media screen and (min-width: 480px) {
+    .elem-center {
+        text-align: center;
+	width: 50%;
+	top: 10;
+	bottom: 0;
+	
+    }
+}
 .pane-when .clock .elem-center{
     display: inline-block;
     position: relative;
