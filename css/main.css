@@ -1316,10 +1316,7 @@ strong,
 
 @media screen and (min-width: 480px) {
     .elem-center {
-        text-align: center;
-	width: 50%;
-	top: 10;
-	bottom: 0;
+        display:none;
 	
     }
 }
