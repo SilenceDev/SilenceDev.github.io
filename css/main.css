@@ -1314,13 +1314,13 @@ strong,
     display: none;
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
     .elem-center{
     visibility: hidden;
     display: none;
  
 }	
-    }
+    } */
 .pane-when .clock .elem-center{
     display: inline-block;
     position: relative;
