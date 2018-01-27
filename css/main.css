@@ -43,6 +43,11 @@ http://themeforest.net/licenses
 
 /* 0. Base Style  */
 /* initialization */
+
+skills{
+    font-size: 5em;
+}
+
 html {
     color: #fff;
     font-size: 1em;
