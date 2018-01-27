@@ -46,6 +46,7 @@ http://themeforest.net/licenses
 
 .skills{
     font-size: .8em !important;
+    display: inline;
 }
 
 html {
