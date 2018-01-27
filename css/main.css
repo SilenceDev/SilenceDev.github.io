@@ -44,11 +44,6 @@ http://themeforest.net/licenses
 /* 0. Base Style  */
 /* initialization */
 
-.skills{
-    font-size: .8em !important;
-    display: inline;
-}
-
 html {
     color: #fff;
     font-size: 1em;
@@ -61,6 +56,12 @@ html {
     text-shadow: none;
 }
 
+.skills{
+    font-size: .8em !important;
+}
+.subhead2{
+    font-size: 1em !important;
+}
 
 hr {
     display: block;
